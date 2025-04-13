@@ -238,14 +238,14 @@ This project was made possible through the support of various technologies and p
 
 ### FPGA Design & Development
 
-<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px;">
-  <div style="text-align: center;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/AMD_Logo.svg" alt="MATLAB Logo" height="60"/>
+<div style="display: flex; align-items: center; flex-wrap: nowrap; gap: 30px; overflow-x: auto; padding: 10px 0;">
+  <div style="text-align: center; min-width: 120px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/AMD_Logo.svg" alt="AMD-Xilinx Logo" height="60"/>
+    <p><b>AMD-Xilinx Vitis HLS</b></p>
+  </div>
+  <div style="text-align: center; min-width: 120px;">
+    <img src="https://hellogov.us/img/vitis.png" alt="AMD University Program Logo" height="50"/>
     <p><b>AMD University Program</b></p>
-</div>
-   <div style="text-align: center;">
-      <img src="https://hellogov.us/img/vitis.png" alt="Vitis Logo" height="60"/>
-      <p><b>Vitis HLS</b></p>
   </div>
 </div>
 
@@ -253,12 +253,12 @@ The AMD University Program provided access to advanced FPGA development tools an
 
 ### Algorithm Development & Reference Implementation
 
-<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px;">
-  <div style="text-align: center;">
+<div style="display: flex; align-items: center; flex-wrap: nowrap; gap: 30px; overflow-x: auto; padding: 10px 0;">
+  <div style="text-align: center; min-width: 120px;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="MATLAB Logo" height="60"/>
     <p><b>MATLAB</b></p>
   </div>
-  <div style="text-align: center;">
+  <div style="text-align: center; min-width: 120px;">
     <img src="https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/pic-header-mathworks-logo.svg" alt="MathWorks HDL Coder Logo" height="50"/>
     <p><b>HDL Coder</b></p>
   </div>
@@ -268,12 +268,12 @@ MATLAB provided the foundation for our reference algorithm implementation and vi
 
 ### Development Environment
 
-<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px;">
-  <div style="text-align: center;">
+<div style="display: flex; align-items: center; flex-wrap: nowrap; gap: 30px; overflow-x: auto; padding: 10px 0;">
+  <div style="text-align: center; min-width: 120px;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code Logo" height="60"/>
     <p><b>VS Code</b></p>
   </div>
-  <div style="text-align: center;">
+  <div style="text-align: center; min-width: 120px;">
     <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git Logo" height="50"/>
     <p><b>Git</b></p>
   </div>
@@ -283,16 +283,16 @@ Visual Studio Code served as our primary integrated development environment, pro
 
 ### AI and LLM Assistance
 
-<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px;">
-  <div style="text-align: center;">
+<div style="display: flex; align-items: center; flex-wrap: nowrap; gap: 30px; overflow-x: auto; padding: 10px 0;">
+  <div style="text-align: center; min-width: 120px;">
     <img src="https://cdn.sanity.io/images/4zrzovbb/website/52ddb5bcc95d134e1c9dd2ce97c4f0dc3f80aaf6-344x184.svg" alt="Claude Logo" height="60"/>
     <p><b>Claude 3.7 Sonnet</b></p>
   </div>
-  <div style="text-align: center;">
+  <div style="text-align: center; min-width: 120px;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/1200px-Google_Gemini_logo.svg.png" alt="Gemini Logo" height="60"/>
     <p><b>Gemini 2.5 Pro</b></p>
   </div>
-  <div style="text-align: center;">
+  <div style="text-align: center; min-width: 120px;">
     <img src="https://github.githubassets.com/images/modules/site/copilot/copilot.png" alt="GitHub Copilot Logo" height="60"/>
     <p><b>GitHub Copilot</b></p>
   </div>
