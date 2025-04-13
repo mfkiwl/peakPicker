@@ -1,5 +1,6 @@
 .venv/
 .vscode/
+HDLCoder/readReports.py
 HDLCoder/opt4_HDL/codegen/peakPicker/hdlsrc/.Xil/
 HDLCoder/opt4_HDL/codegen/peakPicker/hdlsrc/html/
 HDLCoder/opt4_HDL/codegen/peakPicker/hdlsrc/vivado_prj/

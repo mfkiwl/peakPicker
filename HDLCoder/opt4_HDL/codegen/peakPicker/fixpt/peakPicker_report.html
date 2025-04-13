@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Fixed-Point Report for peakPicker</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+	body { font-family: monospace; }
+	h2 { font-family: Arial, Helvetica, sans-serif; color: #990000; margin-top: 50px; }
+	table,th,td { border: 1px solid black; }
+	table { margin-top: 30px; }
+	th { align: center; font-weight: bold; }
+	tr.h { background-color: #99CCFF; }
+	tr.a { background-color: #EEEEFF; }
+	tr.b { background-color: #FFFFFF; }
+	tr.c { background-color: #FFA500; }
+	tr.a td, tr.b td { border-style: none; }
+	td.left { text-align: left; }
+	td.right { text-align: right; }
+	td.center { text-align: center; }
+	td.bold { font-weight: bold; }
+	pre { padding: 0px; margin: 0px; }
+	span { font-style: italic; }
+	.code, .code tr, .code th, .code td { border: none; border-collapse: collapse; }
+	.padd { padding-left: 5px; }
+	td.cov, th.cov { width: 50px; height: 20px; text-align: center; font-weight: bold; border-right: 2px solid black; cell-spacing: 0px; }
+	td.cov { vertical-align: top; }
+	td.black { color: #000000; font-weight: bold; padding-top: 4px; }
+	td.white { color: #FFFFFF; font-weight: bold; padding-top: 4px; }
+	.code th { font-weight: bold; border-bottom: 2px solid black; }
+</style>
+</head>
+<body>
+<h3>Generated on  2025-03-31 22:14:25</h3>
+<p>The following table shows fixed point instrumentation results</p>
+<h2>Fixed-Point Report <span>peakPicker<span></h2>
+<TABLE class="code">
+<TR>
+<TH class="cov padd">Simulation Coverage</TH>
+<TH>Code</TH>
+</TR>
+<TR>
+<TD class="cov white" style="background-color: rgb(5,112,9);">100%</TD>
+<TD class="padd"><pre>function [locations,valid]= peakPicker(xcorr,threshold)
+% Copyright 2021-2023 The MathWorks, Inc.
+    window_length = 11; % Length of the sliding window
+    middle_location=floor(window_length/2);
+    persistent xcorrBuffer; % Persistent buffer for current window
+    persistent thresholdBuffer; % Persistent buffer for threshold
+</pre></TD>
+</TR>
+<TR>
+<TD class="cov black" style="background-color: rgb(255,160,118);">Once</TD>
+<TD class="padd"><pre>    if isempty(xcorrBuffer) % Initialize buffer if empty
+        xcorrBuffer = zeros(window_length, 1); % Preallocate buffer for current window
+    end
+    if isempty(thresholdBuffer) % Initialize threshold buffer if empty
+        thresholdBuffer = zeros(window_length, 1); % Preallocate buffer for threshold
+    end</pre></TD>
+</TR>
+<TR>
+<TD class="cov white" style="background-color: rgb(5,112,9);">100%</TD>
+<TD class="padd"><pre>
+    persistent index; % Persistent index for the loop
+</pre></TD>
+</TR>
+<TR>
+<TD class="cov black" style="background-color: rgb(255,160,118);">Once</TD>
+<TD class="padd"><pre>    if isempty(index) % Initialize index if empty
+        index = 1; % Start from the first index
+    end</pre></TD>
+</TR>
+<TR>
+<TD class="cov white" style="background-color: rgb(5,112,9);">100%</TD>
+<TD class="padd"><pre>
+    
+    xcorrBuffer(2:end,:) = xcorrBuffer(1:end-1,:); % Shift buffer
+    xcorrBuffer(1,:) = xcorr; % Add new sample to buffer
+    thresholdBuffer(2:end) = thresholdBuffer(1:end-1); % Shift threshold buffer
+    thresholdBuffer(1) = threshold; % Add new threshold to buffer
+    if (index &gt;= window_length)
+        candidate_location = index - middle_location;
+        % Hardware friendly implementation of peak finder
+        MidSample = xcorrBuffer(middle_location+1,:);
+        CompareOut = xcorrBuffer - MidSample; % this is a vector
+        % if all values in the result are negative and the middle sample is
+        % greater than a threshold, it is a local max
+</pre></TD>
+</TR>
+<TR>
+<TD class="cov black" style="background-color: rgb(255,160,118);">Once</TD>
+<TD class="padd"><pre>        if all(CompareOut &lt;= 0) &amp;&amp; (MidSample &gt; thresholdBuffer(middle_location+1))
+            locations = candidate_location; % Store the location of the peak
+            valid = true; % Set valid to true if a peak is found
+</pre></TD>
+</TR>
+<TR>
+<TD class="cov white" style="background-color: rgb(5,112,9);">100%</TD>
+<TD class="padd"><pre>        else
+            locations = 0; % No peak found
+            valid = false; % Set valid to false if no peak is found
+        end
+    else
+        locations = 0; % No peak found
+        valid = false; % Set valid to false if no peak is found
+    end
+    index = index + 1; % Increment index for the next iteration
+end</pre></TD>
+</TR>
+</TABLE>
+<TABLE><TR class="h"><th>Variable Name</th><th>Type</th><th>Sim Min</th><th>Sim Max</th><th>Static Min</th><th>Static Max</th><th>Whole Number</th><th>ProposedType <BR /> (Best For WL = 14)</th></TR><TR class="a">
+<TD class="left">CompareOut</TD><TD class="left">double 11 x 1 </TD><TD class="right">-0.00496852708779405</TD><TD class="right">0.00496852708779405</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">No</TD><TD class="left">numerictype(1, 14, 20)</TD></TR>
+<TR class="b">
+<TD class="left">MidSample</TD><TD class="left">double</TD><TD class="right">3.1438542455567e-10</TD><TD class="right">0.00496989047403654</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">No</TD><TD class="left">numerictype(0, 14, 21)</TD></TR>
+<TR class="a">
+<TD class="left">candidate_location</TD><TD class="left">double</TD><TD class="right">6</TD><TD class="right">5996</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 13, 0)</TD></TR>
+<TR class="b">
+<TD class="left">index</TD><TD class="left">double</TD><TD class="right">1</TD><TD class="right">6002</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 13, 0)</TD></TR>
+<TR class="a">
+<TD class="left">locations</TD><TD class="left">double</TD><TD class="right">0</TD><TD class="right">4806</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 13, 0)</TD></TR>
+<TR class="b">
+<TD class="left">middle_location</TD><TD class="left">double</TD><TD class="right">5</TD><TD class="right">5</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 3, 0)</TD></TR>
+<TR class="a">
+<TD class="left">threshold</TD><TD class="left">double</TD><TD class="right">1.52587890625e-05</TD><TD class="right">0.00439644132727772</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">No</TD><TD class="left">numerictype(0, 14, 21)</TD></TR>
+<TR class="b">
+<TD class="left">thresholdBuffer</TD><TD class="left">double 11 x 1 </TD><TD class="right">0</TD><TD class="right">0.00439644132727772</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">No</TD><TD class="left">numerictype(0, 14, 21)</TD></TR>
+<TR class="a">
+<TD class="left">valid</TD><TD class="left">logical</TD><TD class="right">0</TD><TD class="right">1</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 1, 0)</TD></TR>
+<TR class="b">
+<TD class="left">window_length</TD><TD class="left">double</TD><TD class="right">11</TD><TD class="right">11</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 4, 0)</TD></TR>
+<TR class="a">
+<TD class="left">xcorr</TD><TD class="left">double</TD><TD class="right">3.1438542455567e-10</TD><TD class="right">0.00496989047403654</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">No</TD><TD class="left">numerictype(0, 14, 21)</TD></TR>
+<TR class="b">
+<TD class="left">xcorrBuffer</TD><TD class="left">double 11 x 1 </TD><TD class="right">0</TD><TD class="right">0.00496989047403654</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">No</TD><TD class="left">numerictype(0, 14, 21)</TD></TR>
+</TABLE>
+
+</body>
+</html>

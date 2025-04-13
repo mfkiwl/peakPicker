@@ -1,0 +1,27 @@
+===============================================
+FPGA Implementation Report - 2025-04-04 14:27:40.509380
+Base Directory: /home/jielei/Projects/UTS/peakPicker/HDLCoder/opt4_HLS
+===============================================
+
+RESOURCE UTILIZATION SUMMARY:
+-----------------------------
+LUT         336
+FF          296
+DSP           0
+BRAM          0
+URAM          0
+SRL           0
+
+TIMING SUMMARY (MHz):
+--------------------
+Target            5.000
+Post-Synthesis    2.410
+Post-Route        2.952
+
+LATENCY SUMMARY (cycles):
+------------------------
+vitis_prj    343400
+
+===============================================
+End of Report
+===============================================

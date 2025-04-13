@@ -200,7 +200,6 @@ peakPicker/
 │   └── perf_opt3/               # Fully optimized implementation with HLS directives
 ├── HDLCoder/                    # HDL implementations from MATLAB HDL Coder
 ├── docs/                        # Documentation and comparative performance reports
-├── prompts/                     # LLM prompt templates for different optimization strategies
 └── scripts/                     # Automation scripts for comparative analysis
 ```
 
