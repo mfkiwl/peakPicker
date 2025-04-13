@@ -295,7 +295,7 @@ Large Language Models played a central role in our design methodology:
 
 If you find this project useful, please consider giving it a star on GitHub! Stars help us in multiple ways:
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/peakPicker.svg?style=social&label=Star&maxAge=2592000)](https://github.com/rockyco/peakPicker)
+[![GitHub stars](https://img.shields.io/github/stars/rockyco/peakPicker.svg?style=social&label=Star&maxAge=2592000)](https://github.com/rockyco/peakPicker)
 
 - **Visibility**: Stars increase the project's visibility in the FPGA and LLM communities
 - **Feedback**: They provide valuable feedback that the project is useful
