@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Mar 31 22:20:34 2025
+# Process ID: 2555564
+# Current directory: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc
+# Command line: vivado -mode batch -source peakPicker_fixpt_vivado_sim.tcl
+# Log file: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado.log
+# Journal file: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado.jou
+# Running On: UTS-HP-WS, OS: Linux, CPU Frequency: 1199.996 MHz, CPU Physical cores: 6, Host memory: 67139 MB
+#-----------------------------------------------------------
+source peakPicker_fixpt_vivado_sim.tcl
+source peakPicker_fixpt_tb.tcl

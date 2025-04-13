@@ -1,0 +1,2267 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+  **** SW Build 4023990 on Oct 11 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'jielei' on host 'UTS-HP-WS' (Linux_x86_64 version 6.8.0-52-generic) on Tue Apr 01 13:57:58 AEDT 2025
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/jielei/Projects/UTS/peakPicker/HLS/optim2'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 12.5% 
+PROJ=run_hls
+INFO: [HLS 200-1510] Running: open_project -reset proj_peakPicker 
+INFO: [HLS 200-10] Creating and opening project '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker'.
+INFO: [HLS 200-1510] Running: set_top peakPicker 
+INFO: [HLS 200-1510] Running: add_files peakPicker.cpp 
+INFO: [HLS 200-10] Adding design file 'peakPicker.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb peakPicker_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'peakPicker_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb pssCorrMagSq_3_in.txt 
+INFO: [HLS 200-10] Adding test bench file 'pssCorrMagSq_3_in.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb threshold_in.txt 
+INFO: [HLS 200-10] Adding test bench file 'threshold_in.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb locations_3_ref.txt 
+INFO: [HLS 200-10] Adding test bench file 'locations_3_ref.txt' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7k410t-ffg900-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7k410t-ffg900-2'
+INFO: [HLS 200-1510] Running: create_clock -period 256MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.906ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 12.5% 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.488ns.
+INFO: [HLS 200-1510] Running: config_rtl -reset control 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../peakPicker_tb.cpp in debug mode
+   Compiling ../../../../peakPicker.cpp in debug mode
+   Generating csim.exe
+Test passed: The output matches the reference output.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 6001
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 4.3 seconds. CPU system time: 0.54 seconds. Elapsed time: 4.85 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 282.645 MB.
+INFO: [HLS 200-10] Analyzing design file 'peakPicker.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3.05 seconds. CPU system time: 0.58 seconds. Elapsed time: 3.64 seconds; current allocated memory: 285.094 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 438 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 153 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 119 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 122 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 119 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 786 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 605 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 605 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 603 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 437 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 373 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 371 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 371 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 371 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 381 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 396 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-291] Loop 'shift_buffer' is marked as complete unroll implied by the pipeline pragma (peakPicker.cpp:53:9)
+INFO: [HLS 214-291] Loop 'check_local_max' is marked as complete unroll implied by the pipeline pragma (peakPicker.cpp:75:13)
+INFO: [HLS 214-248] Applying array_partition to 'xcorrBuffer': Complete partitioning on dimension 1. (peakPicker.cpp:28:14)
+INFO: [HLS 214-248] Applying array_partition to 'thresholdBuffer': Complete partitioning on dimension 1. (peakPicker.cpp:32:16)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.8 seconds. CPU system time: 0.44 seconds. Elapsed time: 7.7 seconds; current allocated memory: 286.582 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 286.582 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 287.824 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 288.113 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'process_signal' (peakPicker.cpp:48) in function 'peakPicker' for pipelining.
+WARNING: [HLS 200-936] Cannot unroll loop 'shift_buffer' (peakPicker.cpp:53) in function 'peakPicker': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-936.html
+WARNING: [HLS 200-936] Cannot unroll loop 'check_local_max' (peakPicker.cpp:75) in function 'peakPicker': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-936.html
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (peakPicker.cpp:75:13) to (peakPicker.cpp:75:13) in function 'peakPicker'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.15 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 312.410 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 312.410 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'peakPicker' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'peakPicker' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'process_signal': contains subloop(s) that are not unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2.71 seconds. CPU system time: 0.06 seconds. Elapsed time: 2.76 seconds; current allocated memory: 341.738 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 341.738 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'peakPicker' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'peakPicker/xcorrStream' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'peakPicker/thresholdStream' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'peakPicker/signalLength' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'peakPicker/windowLength' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'peakPicker/peakLocStream' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'peakPicker/peakCountStream' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'peakPicker' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'signalLength', 'windowLength' and 'return' to AXI-Lite port CTRL.
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_35_5_20_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_65_5_20_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'peakPicker'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.35 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.36 seconds; current allocated memory: 341.738 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.49 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.51 seconds; current allocated memory: 342.309 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.33 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.35 seconds; current allocated memory: 345.801 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for peakPicker.
+INFO: [VLOG 209-307] Generating Verilog RTL for peakPicker.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 296.21 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 10.4 seconds. CPU system time: 1.15 seconds. Elapsed time: 16.03 seconds; current allocated memory: 63.594 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/opt/Xilinx/Vitis_HLS/2023.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_peakPicker.cpp
+   Compiling apatb_peakPicker_util.cpp
+   Compiling peakPicker.cpp_pre.cpp.tb.cpp
+   Compiling peakPicker_tb.cpp_pre.cpp.tb.cpp
+   Compiling apatb_peakPicker_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Test passed: The output matches the reference output.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 6001
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_peakPicker_top glbl -Oenable_linking_all_libraries -prj peakPicker.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_16 -L floating_point_v7_0_21 --lib ieee_proposed=./ieee_proposed -s peakPicker 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/AESL_axi_slave_CTRL.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_CTRL
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/peakPicker.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module peakPicker
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/peakPicker_sparsemux_35_5_20_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module peakPicker_sparsemux_35_5_20_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/AESL_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/peakPicker_CTRL_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module peakPicker_CTRL_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/peakPicker.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_peakPicker_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/AESL_axi_s_thresholdStream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_thresholdStream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/peakPicker_regslice_both.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module peakPicker_regslice_both
+INFO: [VRFC 10-311] analyzing module peakPicker_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/AESL_axi_s_xcorrStream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_xcorrStream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/peakPicker_sparsemux_65_5_20_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module peakPicker_sparsemux_65_5_20_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_kernel_monitor_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/AESL_axi_s_peakCountStream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_peakCountStream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/AESL_axi_s_peakLocStream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_peakLocStream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/AESL_deadlock_idx0_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx0_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.peakPicker_CTRL_s_axi
+Compiling module xil_defaultlib.peakPicker_sparsemux_65_5_20_1_1...
+Compiling module xil_defaultlib.peakPicker_sparsemux_35_5_20_1_1...
+Compiling module xil_defaultlib.peakPicker_regslice_both(DataWid...
+Compiling module xil_defaultlib.peakPicker_regslice_both(DataWid...
+Compiling module xil_defaultlib.peakPicker_regslice_both(DataWid...
+Compiling module xil_defaultlib.peakPicker
+Compiling module xil_defaultlib.fifo(DEPTH=6001,WIDTH=24)
+Compiling module xil_defaultlib.AESL_axi_s_xcorrStream
+Compiling module xil_defaultlib.AESL_axi_s_thresholdStream
+Compiling module xil_defaultlib.fifo(DEPTH=2,WIDTH=16)
+Compiling module xil_defaultlib.AESL_axi_s_peakLocStream
+Compiling module xil_defaultlib.fifo(DEPTH=2)
+Compiling module xil_defaultlib.AESL_axi_s_peakCountStream
+Compiling module xil_defaultlib.AESL_axi_slave_CTRL
+Compiling module xil_defaultlib.AESL_deadlock_idx0_monitor
+Compiling module xil_defaultlib.AESL_deadlock_kernel_monitor_top...
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=9)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_peakPicker_top
+Compiling module work.glbl
+Built simulation snapshot peakPicker
+
+****** xsim v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/peakPicker/xsim_script.tcl
+# xsim {peakPicker} -autoloadwcfg -tclbatch {peakPicker.tcl}
+Time resolution is 1 ps
+source peakPicker.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "111000"
+// RTL Simulation : 1 / 1 [n/a] @ "1075911000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 1075933950 ps : File "/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/sim/verilog/peakPicker.autotb.v" Line 450
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1235.664 ; gain = 0.000 ; free physical = 3607 ; free virtual = 43744
+## quit
+INFO: [Common 17-206] Exiting xsim at Tue Apr  1 13:59:02 2025...
+INFO: [COSIM 212-316] Starting C post checking ...
+Test passed: The output matches the reference output.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 6001
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 59.55 seconds. CPU system time: 3.04 seconds. Elapsed time: 42.12 seconds; current allocated memory: 6.801 MB.
+INFO: [HLS 200-1510] Running: export_design -flow syn -rtl verilog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+ipx::create_core: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1371.926 ; gain = 0.023 ; free physical = 3483 ; free virtual = 43625
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  1 13:59:20 2025...
+INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_vivadosyn.tcl
+# source ./settings.tcl
+## set top_module peakPicker
+## set language verilog
+## set family kintex7
+## set device xc7k410t
+## set package -ffg900
+## set speed -2
+## set clock ap_clk
+## set fsm_ext "off"
+## set add_io_buffers false ;
+# source -notrace ./extraction.tcl
+# set vivado_proj_name project
+# set vivado_proj_dir .
+# set target_device "${device}${package}${speed}"
+# set target_clk_period_ns "3.906"
+# set target_clk_freq_hz [expr {floor(1000 / $target_clk_period_ns) * 1000000}]
+# set ip_vlnv xilinx.com:hls:peakPicker:1.0
+# set ip_repo_path ../ip
+# set bd_design_name bd_0
+# set bd_inst_name hls_inst
+# set bd_props {}
+# set has_synth true
+# set synth_design_args {-directive sdx_optimization_effort_high}
+# set synth_dcp ""
+# set synth_props {}
+# set has_impl false
+# set impl_props {}
+# set report_options [dict create]
+# dict set report_options report_level 2
+# dict set report_options report_max_paths 10
+# dict set report_options stdout_hls_reports 1
+# dict set report_options stdout_vivado_reports 0
+# dict set report_options hls_project proj_peakPicker
+# dict set report_options hls_solution solution1
+# dict set report_options has_synth $has_synth
+# dict set report_options has_impl $has_impl
+# dict set report_options vivado_reportbasename $top_module
+# dict set report_options vivado_reportdir ./report
+# dict set report_options hls_impl_dir ..
+# dict set report_options hls_reportdir ../report/$language
+# dict set report_options target_clk_period $target_clk_period_ns
+# dict set report_options target_device $target_device
+# dict set report_options language $language
+# dict set report_options clock_name $clock
+# dict set report_options error_if_impl_timing_fails false
+# dict set report_options bindmodules {peakPicker_sparsemux_65_5_20_1_1 peakPicker_sparsemux_35_5_20_1_1 peakPicker_CTRL_s_axi peakPicker_regslice_both}
+# dict set report_options max_module_depth 5
+# create_project $vivado_proj_name $vivado_proj_dir -part $target_device -force
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1343.754 ; gain = 0.023 ; free physical = 3672 ; free virtual = 43801
+# set_property target_language $language [current_project]
+# if { ![file exists $ip_repo_path] } {
+#   error "Cannot find packaged HLS IP"
+# }
+# set_property ip_repo_paths [file normalize $ip_repo_path] [current_project]
+# update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+# create_bd_design $bd_design_name
+Wrote  : </home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/bd_0.bd> 
+# set cell_inst [create_bd_cell -type ip -vlnv $ip_vlnv $bd_inst_name]
+# if { [llength $bd_props] } { 
+#   set_property -dict $bd_props $cell_inst 
+# }
+# make_bd_pins_external $cell_inst
+# make_bd_intf_pins_external $cell_inst
+# set bd_clk_ports [get_bd_ports -filter {TYPE==clk}]
+# if { [llength $bd_clk_ports] && $target_clk_freq_hz ne "" } { 
+#   set_property CONFIG.FREQ_HZ $target_clk_freq_hz $bd_clk_ports 
+# }
+# foreach bd_port [get_bd_intf_ports] {
+#   set_property name [regsub {_0$} [get_property name $bd_port] {}] $bd_port
+# }
+# foreach bd_port [get_bd_ports -filter {INTF!=TRUE}] {
+#   set_property name [regsub {_0$} [get_property name $bd_port] {}] $bd_port
+# }
+# set s_axi_addr_width_min 32
+# foreach bd_port [get_bd_intf_ports -filter {MODE == "Slave" && VLNV =~ "xilinx.com:interface:aximm_rtl:*"}] {
+#   set bd_port_addr_width [get_property CONFIG.ADDR_WIDTH $bd_port]
+#   if { $bd_port_addr_width < $s_axi_addr_width_min } {
+#     puts "INFO: Updating $bd_port CONFIG.ADDR_WIDTH to $s_axi_addr_width_min"
+#     set_property CONFIG.ADDR_WIDTH $s_axi_addr_width_min $bd_port
+#   }
+# }
+INFO: Updating /s_axi_CTRL CONFIG.ADDR_WIDTH to 32
+# set_msg_config -id {[BD 41-1265]} -severity {CRITICAL WARNING} -new_severity {INFO}
+# assign_bd_address
+Slave segment '/hls_inst/s_axi_CTRL/Reg' is being assigned into address space '/s_axi_CTRL' at <0x0000_0000 [ 64K ]>.
+Wrote  : </home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/bd_0.bd> 
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/sim/bd_0.v
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v
+# set toprtl [make_wrapper -files [get_files ${bd_design_name}.bd] -top]
+# add_files -norecurse $toprtl
+# set top_inst_name [file root [file tail $toprtl]]
+# puts "Using BD top: $top_inst_name"
+Using BD top: bd_0_wrapper
+# set xdc_files [glob -nocomplain ./*.xdc]
+# if { [llength $xdc_files] } {
+#     add_files -fileset constrs_1 -norecurse $xdc_files
+# }
+# launch_runs synth_1 -scripts_only
+INFO: [BD 41-1662] The design 'bd_0.bd' is already validated. Therefore parameter propagation will not be re-run.
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/sim/bd_0.v
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hls_inst .
+Exporting to file /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hw_handoff/bd_0.hwh
+Generated Hardware Definition File /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.hwdef
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: bd_0_hls_inst_0
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1732.160 ; gain = 72.035 ; free physical = 3395 ; free virtual = 43527
+# foreach run [get_runs -filter {IS_SYNTHESIS == 1}] {
+#   reset_run [get_runs $run]
+# }
+# set_property XPM_LIBRARIES {XPM_MEMORY XPM_FIFO} [current_project]
+# hls_vivado_reports_setup $report_options
+TIMESTAMP: HLS-REPORT: initialize report directories: 2025-04-01 13:59:43 AEDT
+# if { $has_synth || $has_impl } {
+#   # synth properties setting
+#   set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
+#   set ip_inst [get_ips -quiet ${bd_design_name}*${bd_inst_name}*]
+#   if { ![llength $ip_inst] } {
+#       error "Cannot find HLS IP instance: ${bd_design_name}*${bd_inst_name}*"
+#   }
+#   set synth_run [get_runs -filter {IS_SYNTHESIS == 1} ${ip_inst}*]
+#   if { ![llength $synth_run] } {
+#       error "Cannot find synth run for HLS IP: ${ip_inst}*"
+#   }
+# 
+#   if { [llength $synth_design_args] } {
+#       set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value $synth_design_args -objects $synth_run
+#   }
+# 
+#   if { [llength $synth_props] } {
+#     set_property -dict $synth_props $synth_run
+#   }
+# 
+#   # launch run synth
+#   launch_runs synth_1
+#   wait_on_run synth_1
+#   # synth reports
+#   hls_vivado_reports_synth synth_1 $report_options
+#   if { $synth_dcp ne "" } {
+#     file mkdir [file dirname $synth_dcp]
+#     set run_dcp [glob -nocomplain [get_property DIRECTORY $synth_run]/*.dcp]
+#     if { [llength $run_dcp] != 1 } { error "Cannot find single dcp file for run $synth_run" }
+#     file copy -force $run_dcp $synth_dcp
+#   }
+# }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: bd_0_hls_inst_0
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Tue Apr  1 13:59:43 2025] Launched bd_0_hls_inst_0_synth_1...
+Run output will be captured here: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/runme.log
+[Tue Apr  1 13:59:43 2025] Launched synth_1...
+Run output will be captured here: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/runme.log
+[Tue Apr  1 13:59:43 2025] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log bd_0_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_0_wrapper.tcl
+
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source bd_0_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1342.781 ; gain = 0.023 ; free physical = 2721 ; free virtual = 42883
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+Command: synth_design -top bd_0_wrapper -part xc7k410tffg900-2 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k410t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k410t'
+INFO: [Common 17-1540] The version limit for your license is '2025.02' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+INFO: [Device 21-403] Loading part xc7k410tffg900-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 642999
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2161.773 ; gain = 403.715 ; free physical = 1631 ; free virtual = 41796
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'bd_0_wrapper' [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'bd_0' [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v:13]
+INFO: [Synth 8-6157] synthesizing module 'bd_0_hls_inst_0' [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/.Xil/Vivado-638160-UTS-HP-WS/realtime/bd_0_hls_inst_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'bd_0_hls_inst_0' (0#1) [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/.Xil/Vivado-638160-UTS-HP-WS/realtime/bd_0_hls_inst_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'bd_0' (0#1) [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'bd_0_wrapper' (0#1) [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v:13]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2250.711 ; gain = 492.652 ; free physical = 1526 ; free virtual = 41693
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2265.555 ; gain = 507.496 ; free physical = 1526 ; free virtual = 41692
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2265.555 ; gain = 507.496 ; free physical = 1526 ; free virtual = 41692
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2265.555 ; gain = 0.000 ; free physical = 1525 ; free virtual = 41692
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/bd_0_hls_inst_0/bd_0_hls_inst_0_in_context.xdc] for cell 'bd_0_i/hls_inst'
+Finished Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/bd_0_hls_inst_0/bd_0_hls_inst_0_in_context.xdc] for cell 'bd_0_i/hls_inst'
+Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/peakPicker.xdc]
+Finished Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/peakPicker.xdc]
+Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2322.484 ; gain = 0.000 ; free physical = 1504 ; free virtual = 41671
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2322.520 ; gain = 0.000 ; free physical = 1505 ; free virtual = 41672
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1506 ; free virtual = 41672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k410tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1506 ; free virtual = 41672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for bd_0_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for bd_0_i/hls_inst. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1506 ; free virtual = 41672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1507 ; free virtual = 41675
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1540 (col length:140)
+BRAMs: 1590 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1506 ; free virtual = 41665
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1483 ; free virtual = 41643
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1483 ; free virtual = 41643
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1483 ; free virtual = 41643
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1498 ; free virtual = 41655
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1498 ; free virtual = 41655
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1498 ; free virtual = 41655
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1498 ; free virtual = 41655
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1498 ; free virtual = 41655
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1498 ; free virtual = 41655
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------+----------+
+|      |BlackBox name   |Instances |
++------+----------------+----------+
+|1     |bd_0_hls_inst_0 |         1|
++------+----------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |bd_0_hls_inst |     1|
++------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1498 ; free virtual = 41655
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2322.520 ; gain = 507.496 ; free physical = 1498 ; free virtual = 41655
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.520 ; gain = 564.461 ; free physical = 1498 ; free virtual = 41655
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2322.520 ; gain = 0.000 ; free physical = 1498 ; free virtual = 41655
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2322.520 ; gain = 0.000 ; free physical = 1794 ; free virtual = 41951
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 354bd8bb
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 2322.520 ; gain = 972.801 ; free physical = 1795 ; free virtual = 41952
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1928.856; main = 1603.414; forked = 379.431
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3296.203; main = 2306.480; forked = 989.723
+INFO: [Common 17-1381] The checkpoint '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/bd_0_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file bd_0_wrapper_utilization_synth.rpt -pb bd_0_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  1 14:01:32 2025...
+[Tue Apr  1 14:01:36 2025] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:01:51 ; elapsed = 00:01:53 . Memory (MB): peak = 1732.160 ; gain = 0.000 ; free physical = 3146 ; free virtual = 43301
+TIMESTAMP: HLS-REPORT: synthesis open_run: 2025-04-01 14:01:36 AEDT
+INFO: HLS-REPORT: Opening synthesis design database: open_run synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7k410tffg900-2
+INFO: [Device 21-403] Loading part xc7k410tffg900-2
+INFO: [Project 1-454] Reading design checkpoint '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/bd_0_hls_inst_0.dcp' for cell 'bd_0_i/hls_inst'
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1911.188 ; gain = 0.000 ; free physical = 2974 ; free virtual = 43130
+INFO: [Netlist 29-17] Analyzing 350 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/peakPicker.xdc]
+Finished Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/peakPicker.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2029.598 ; gain = 0.000 ; free physical = 2884 ; free virtual = 43039
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2029.633 ; gain = 297.473 ; free physical = 2883 ; free virtual = 43039
+TIMESTAMP: HLS-REPORT: synthesis generate_reports_vivado: 2025-04-01 14:01:41 AEDT
+INFO: HLS-REPORT: Running report: report_utilization -file ./report/peakPicker_utilization_synth.rpt
+INFO: HLS-REPORT: Running report: report_utilization -hierarchical -hierarchical_depth 5 -file ./report/peakPicker_utilization_hierarchical_synth.rpt
+INFO: HLS-REPORT: Running report: report_timing_summary -file ./report/peakPicker_timing_synth.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 6 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+report_timing_summary: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2653.641 ; gain = 624.008 ; free physical = 2364 ; free virtual = 42519
+INFO: HLS-REPORT: Running report: report_timing -max_paths 10 -file ./report/peakPicker_timing_paths_synth.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 6 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 10 -nworst 1 -delay_type max -sort_by slack.
+INFO: HLS-REPORT: Running report: report_design_analysis -file ./report/peakPicker_design_analysis_synth.rpt
+INFO: [Implflow 30-839]  
+INFO: HLS-REPORT: Running report: ::tclapp::xilinx::designutils::report_failfast -detailed_report synth -file ./report/peakPicker_failfast_synth.rpt
+ -I- design metrics completed in 1 seconds
+ -I- DONT_TOUCH metric completed in 0 seconds
+ -I- MARK_DEBUG metric completed in 0 seconds
+ -I- utilization metrics completed in 1 seconds
+ -I- control set metrics completed in 0 seconds
+ -I- methodology check metrics completed in 0 seconds
+ -I- average fanout metrics completed in 1 seconds (0 modules)
+ -I- non-FD high fanout nets completed in 0 seconds
+ -I- path budgeting metrics completed in 0 seconds
+#  +-----------------------------------------------------------------------------------------+
+#  | Design Summary                                                                          |
+#  | design_1                                                                                |
+#  | xc7k410tffg900-2                                                                        |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | Criteria                                                  | Guideline | Actual | Status |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | LUT                                                       | 70%       | 1.95%  | OK     |
+#  | FD                                                        | 50%       | 0.86%  | OK     |
+#  | LUTRAM+SRL                                                | 25%       | 0.00%  | OK     |
+#  | MUXF7                                                     | 15%       | 0.25%  | OK     |
+#  | DSP                                                       | 80%       | 0.00%  | OK     |
+#  | RAMB/FIFO                                                 | 80%       | 0.00%  | OK     |
+#  | DSP+RAMB+URAM (Avg)                                       | 70%       | 0.00%  | OK     |
+#  | BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+#  | DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+#  | MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+#  | Control Sets                                              | 4766      | 27     | OK     |
+#  | Average Fanout for modules > 100k cells                   | 4         | 3.17   | OK     |
+#  | Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+#  | Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+#  | TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+#  | TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+#  | TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+#  | TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | Number of paths above max LUT budgeting (0.500ns)         | 0         | 0      | OK     |
+#  | Number of paths above max Net budgeting (0.350ns)         | 0         | 0      | OK     |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+ -I- Generated file /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/report/peakPicker_failfast_synth.rpt
+ -I- Number of criteria to review: 0
+ -I- This report should be run before placing the design and uses conservative guidelines beyond which runtime and timing closure will likely be more challenging
+ -I- report_failfast completed in 3 seconds
+TIMESTAMP: HLS-REPORT: synthesis gen_data_dict_vivado: 2025-04-01 14:01:53 AEDT
+TIMESTAMP: HLS-REPORT: synth extract_util_hier: 2025-04-01 14:01:53 AEDT
+TIMESTAMP: HLS-REPORT: synth get_cell_hier_data: 2025-04-01 14:01:53 AEDT
+TIMESTAMP: HLS-REPORT: synth get_timing_paths: 2025-04-01 14:01:53 AEDT
+TIMESTAMP: HLS-REPORT: synth process timing paths: 2025-04-01 14:01:53 AEDT
+TIMESTAMP: HLS-REPORT: synth get_all_vv_rpt_files: 2025-04-01 14:01:53 AEDT
+TIMESTAMP: HLS-REPORT: synthesis write_reports_vivado: 2025-04-01 14:01:53 AEDT
+HLS EXTRACTION: synth area_totals:  0 254200 508400 1540 1590 0 0
+HLS EXTRACTION: synth area_current: 0 4952 4394 0 0 0 0 0 0 0
+HLS EXTRACTION: synth resources_dict: AVAIL_LUT 254200 LUT 4952 AVAIL_FF 508400 FF 4394 AVAIL_DSP 1540 DSP 0 AVAIL_BRAM 1590 BRAM 0 AVAIL_URAM 0 URAM 0 LATCH 0 SRL 0 AVAIL_CLB 0 CLB 0
+INFO: HLS-REPORT: generated /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/report/vivado_syn.xml
+INFO: HLS-REPORT: generated /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/report/verilog/peakPicker_export.rpt
+
+
+Implementation tool: Xilinx Vivado v.2023.2
+Project:             proj_peakPicker
+Solution:            solution1
+Device target:       xc7k410t-ffg900-2
+Report date:         Tue Apr 01 14:01:53 AEDT 2025
+
+#=== Post-Synthesis Resource usage ===
+SLICE:            0
+LUT:           4952
+FF:            4394
+DSP:              0
+BRAM:             0
+URAM:             0
+LATCH:            0
+SRL:              0
+CLB:              0
+
+#=== Final timing ===
+CP required:                     3.906
+CP achieved post-synthesis:      3.004
+Timing met
+
+TIMESTAMP: HLS-REPORT: synthesis end: 2025-04-01 14:01:53 AEDT
+# if { $has_impl } {
+#   # launch run impl
+#   if { [llength $impl_props] } {
+#     set_property -dict $impl_props [get_runs impl_1]
+#   }
+#   launch_runs impl_1
+#   wait_on_run impl_1
+#   # impl reports
+#   hls_vivado_reports_impl impl_1 $report_options
+# }
+# hls_vivado_reports_finalize $report_options
+TIMESTAMP: HLS-REPORT: all reports complete: 2025-04-01 14:01:53 AEDT
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  1 14:01:53 2025...
+INFO: [HLS 200-802] Generated output file proj_peakPicker/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 168.44 seconds. CPU system time: 8.86 seconds. Elapsed time: 174.82 seconds; current allocated memory: 6.859 MB.
+INFO: [HLS 200-1510] Running: export_design -flow impl -rtl verilog -format syn_dcp 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+ipx::create_core: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1374.055 ; gain = 0.023 ; free physical = 3566 ; free virtual = 43723
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  1 14:02:15 2025...
+INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_vivado.tcl
+# source ./settings.tcl
+## set top_module peakPicker
+## set language verilog
+## set family kintex7
+## set device xc7k410t
+## set package -ffg900
+## set speed -2
+## set clock ap_clk
+## set fsm_ext "off"
+## set add_io_buffers false ;
+# source -notrace ./extraction.tcl
+# set vivado_proj_name project
+# set vivado_proj_dir .
+# set target_device "${device}${package}${speed}"
+# set target_clk_period_ns "3.906"
+# set target_clk_freq_hz [expr {floor(1000 / $target_clk_period_ns) * 1000000}]
+# set ip_vlnv xilinx.com:hls:peakPicker:1.0
+# set ip_repo_path ../ip
+# set bd_design_name bd_0
+# set bd_inst_name hls_inst
+# set bd_props {}
+# set has_synth true
+# set synth_design_args {-directive sdx_optimization_effort_high}
+# set synth_dcp "./report/${top_module}.dcp"
+# set synth_props {}
+# set has_impl 1
+# set impl_props {}
+# set report_options [dict create]
+# dict set report_options report_level 2
+# dict set report_options report_max_paths 10
+# dict set report_options stdout_hls_reports 1
+# dict set report_options stdout_vivado_reports 0
+# dict set report_options hls_project proj_peakPicker
+# dict set report_options hls_solution solution1
+# dict set report_options has_synth $has_synth
+# dict set report_options has_impl $has_impl
+# dict set report_options vivado_reportbasename $top_module
+# dict set report_options vivado_reportdir ./report
+# dict set report_options hls_impl_dir ..
+# dict set report_options hls_reportdir ../report/$language
+# dict set report_options target_clk_period $target_clk_period_ns
+# dict set report_options target_device $target_device
+# dict set report_options language $language
+# dict set report_options clock_name $clock
+# dict set report_options error_if_impl_timing_fails false
+# dict set report_options bindmodules {peakPicker_sparsemux_65_5_20_1_1 peakPicker_sparsemux_35_5_20_1_1 peakPicker_CTRL_s_axi peakPicker_regslice_both}
+# dict set report_options max_module_depth 5
+# create_project $vivado_proj_name $vivado_proj_dir -part $target_device -force
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1344.754 ; gain = 0.023 ; free physical = 3391 ; free virtual = 43533
+# set_property target_language $language [current_project]
+# if { ![file exists $ip_repo_path] } {
+#   error "Cannot find packaged HLS IP"
+# }
+# set_property ip_repo_paths [file normalize $ip_repo_path] [current_project]
+# update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+# create_bd_design $bd_design_name
+Wrote  : </home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/bd_0.bd> 
+# set cell_inst [create_bd_cell -type ip -vlnv $ip_vlnv $bd_inst_name]
+# if { [llength $bd_props] } { 
+#   set_property -dict $bd_props $cell_inst 
+# }
+# make_bd_pins_external $cell_inst
+# make_bd_intf_pins_external $cell_inst
+# set bd_clk_ports [get_bd_ports -filter {TYPE==clk}]
+# if { [llength $bd_clk_ports] && $target_clk_freq_hz ne "" } { 
+#   set_property CONFIG.FREQ_HZ $target_clk_freq_hz $bd_clk_ports 
+# }
+# foreach bd_port [get_bd_intf_ports] {
+#   set_property name [regsub {_0$} [get_property name $bd_port] {}] $bd_port
+# }
+# foreach bd_port [get_bd_ports -filter {INTF!=TRUE}] {
+#   set_property name [regsub {_0$} [get_property name $bd_port] {}] $bd_port
+# }
+# set s_axi_addr_width_min 32
+# foreach bd_port [get_bd_intf_ports -filter {MODE == "Slave" && VLNV =~ "xilinx.com:interface:aximm_rtl:*"}] {
+#   set bd_port_addr_width [get_property CONFIG.ADDR_WIDTH $bd_port]
+#   if { $bd_port_addr_width < $s_axi_addr_width_min } {
+#     puts "INFO: Updating $bd_port CONFIG.ADDR_WIDTH to $s_axi_addr_width_min"
+#     set_property CONFIG.ADDR_WIDTH $s_axi_addr_width_min $bd_port
+#   }
+# }
+INFO: Updating /s_axi_CTRL CONFIG.ADDR_WIDTH to 32
+# set_msg_config -id {[BD 41-1265]} -severity {CRITICAL WARNING} -new_severity {INFO}
+# assign_bd_address
+Slave segment '/hls_inst/s_axi_CTRL/Reg' is being assigned into address space '/s_axi_CTRL' at <0x0000_0000 [ 64K ]>.
+Wrote  : </home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/bd_0.bd> 
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/sim/bd_0.v
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v
+# set toprtl [make_wrapper -files [get_files ${bd_design_name}.bd] -top]
+# add_files -norecurse $toprtl
+# set top_inst_name [file root [file tail $toprtl]]
+# puts "Using BD top: $top_inst_name"
+Using BD top: bd_0_wrapper
+# set xdc_files [glob -nocomplain ./*.xdc]
+# if { [llength $xdc_files] } {
+#     add_files -fileset constrs_1 -norecurse $xdc_files
+# }
+# launch_runs synth_1 -scripts_only
+INFO: [BD 41-1662] The design 'bd_0.bd' is already validated. Therefore parameter propagation will not be re-run.
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/sim/bd_0.v
+Verilog Output written to : /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hls_inst .
+Exporting to file /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hw_handoff/bd_0.hwh
+Generated Hardware Definition File /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.hwdef
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: bd_0_hls_inst_0
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1732.160 ; gain = 72.035 ; free physical = 3163 ; free virtual = 43303
+# foreach run [get_runs -filter {IS_SYNTHESIS == 1}] {
+#   reset_run [get_runs $run]
+# }
+# set_property XPM_LIBRARIES {XPM_MEMORY XPM_FIFO} [current_project]
+# hls_vivado_reports_setup $report_options
+TIMESTAMP: HLS-REPORT: initialize report directories: 2025-04-01 14:02:38 AEDT
+# if { $has_synth || $has_impl } {
+#   # synth properties setting
+#   set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
+#   set ip_inst [get_ips -quiet ${bd_design_name}*${bd_inst_name}*]
+#   if { ![llength $ip_inst] } {
+#       error "Cannot find HLS IP instance: ${bd_design_name}*${bd_inst_name}*"
+#   }
+#   set synth_run [get_runs -filter {IS_SYNTHESIS == 1} ${ip_inst}*]
+#   if { ![llength $synth_run] } {
+#       error "Cannot find synth run for HLS IP: ${ip_inst}*"
+#   }
+# 
+#   if { [llength $synth_design_args] } {
+#       set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value $synth_design_args -objects $synth_run
+#   }
+# 
+#   if { [llength $synth_props] } {
+#     set_property -dict $synth_props $synth_run
+#   }
+# 
+#   # launch run synth
+#   launch_runs synth_1
+#   wait_on_run synth_1
+#   # synth reports
+#   hls_vivado_reports_synth synth_1 $report_options
+#   if { $synth_dcp ne "" } {
+#     file mkdir [file dirname $synth_dcp]
+#     set run_dcp [glob -nocomplain [get_property DIRECTORY $synth_run]/*.dcp]
+#     if { [llength $run_dcp] != 1 } { error "Cannot find single dcp file for run $synth_run" }
+#     file copy -force $run_dcp $synth_dcp
+#   }
+# }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: bd_0_hls_inst_0
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Tue Apr  1 14:02:38 2025] Launched bd_0_hls_inst_0_synth_1...
+Run output will be captured here: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/runme.log
+[Tue Apr  1 14:02:38 2025] Launched synth_1...
+Run output will be captured here: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/runme.log
+[Tue Apr  1 14:02:38 2025] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log bd_0_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_0_wrapper.tcl
+
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source bd_0_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1338.176 ; gain = 33.836 ; free physical = 2735 ; free virtual = 42891
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+Command: synth_design -top bd_0_wrapper -part xc7k410tffg900-2 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k410t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k410t'
+INFO: [Common 17-1540] The version limit for your license is '2025.02' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+INFO: [Device 21-403] Loading part xc7k410tffg900-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 702691
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2161.535 ; gain = 402.715 ; free physical = 1638 ; free virtual = 41793
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'bd_0_wrapper' [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'bd_0' [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v:13]
+INFO: [Synth 8-6157] synthesizing module 'bd_0_hls_inst_0' [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/.Xil/Vivado-697701-UTS-HP-WS/realtime/bd_0_hls_inst_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'bd_0_hls_inst_0' (0#1) [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/.Xil/Vivado-697701-UTS-HP-WS/realtime/bd_0_hls_inst_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'bd_0' (0#1) [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'bd_0_wrapper' (0#1) [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v:13]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2250.473 ; gain = 491.652 ; free physical = 1518 ; free virtual = 41674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2265.316 ; gain = 506.496 ; free physical = 1517 ; free virtual = 41673
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2265.316 ; gain = 506.496 ; free physical = 1517 ; free virtual = 41673
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2265.316 ; gain = 0.000 ; free physical = 1517 ; free virtual = 41673
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/bd_0_hls_inst_0/bd_0_hls_inst_0_in_context.xdc] for cell 'bd_0_i/hls_inst'
+Finished Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/bd_0_hls_inst_0/bd_0_hls_inst_0_in_context.xdc] for cell 'bd_0_i/hls_inst'
+Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/peakPicker.xdc]
+Finished Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/peakPicker.xdc]
+Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2322.246 ; gain = 0.000 ; free physical = 1509 ; free virtual = 41665
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2322.281 ; gain = 0.000 ; free physical = 1507 ; free virtual = 41663
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1508 ; free virtual = 41664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k410tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1509 ; free virtual = 41665
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for bd_0_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for bd_0_i/hls_inst. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1509 ; free virtual = 41665
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1507 ; free virtual = 41664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1540 (col length:140)
+BRAMs: 1590 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1505 ; free virtual = 41662
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1506 ; free virtual = 41663
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1506 ; free virtual = 41663
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1506 ; free virtual = 41663
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1504 ; free virtual = 41661
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1504 ; free virtual = 41661
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1504 ; free virtual = 41661
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1504 ; free virtual = 41661
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1504 ; free virtual = 41661
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1504 ; free virtual = 41661
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------+----------+
+|      |BlackBox name   |Instances |
++------+----------------+----------+
+|1     |bd_0_hls_inst_0 |         1|
++------+----------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |bd_0_hls_inst |     1|
++------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1504 ; free virtual = 41661
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2322.281 ; gain = 506.496 ; free physical = 1504 ; free virtual = 41661
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2322.281 ; gain = 563.461 ; free physical = 1504 ; free virtual = 41661
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2322.281 ; gain = 0.000 ; free physical = 1504 ; free virtual = 41661
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2322.281 ; gain = 0.000 ; free physical = 1794 ; free virtual = 41951
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 354bd8bb
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 2322.281 ; gain = 971.230 ; free physical = 1793 ; free virtual = 41950
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1931.481; main = 1605.318; forked = 379.499
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3295.969; main = 2306.242; forked = 989.727
+INFO: [Common 17-1381] The checkpoint '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/synth_1/bd_0_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file bd_0_wrapper_utilization_synth.rpt -pb bd_0_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  1 14:04:27 2025...
+[Tue Apr  1 14:04:30 2025] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:01:51 ; elapsed = 00:01:53 . Memory (MB): peak = 1732.160 ; gain = 0.000 ; free physical = 3186 ; free virtual = 43341
+TIMESTAMP: HLS-REPORT: synthesis open_run: 2025-04-01 14:04:30 AEDT
+INFO: HLS-REPORT: Opening synthesis design database: open_run synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7k410tffg900-2
+INFO: [Device 21-403] Loading part xc7k410tffg900-2
+INFO: [Project 1-454] Reading design checkpoint '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/bd_0_hls_inst_0.dcp' for cell 'bd_0_i/hls_inst'
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1911.188 ; gain = 0.000 ; free physical = 2984 ; free virtual = 43140
+INFO: [Netlist 29-17] Analyzing 350 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/peakPicker.xdc]
+Finished Parsing XDC File [/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/peakPicker.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2029.598 ; gain = 0.000 ; free physical = 2886 ; free virtual = 43041
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2029.633 ; gain = 297.473 ; free physical = 2886 ; free virtual = 43041
+TIMESTAMP: HLS-REPORT: synthesis generate_reports_vivado: 2025-04-01 14:04:36 AEDT
+INFO: HLS-REPORT: Running report: report_utilization -file ./report/peakPicker_utilization_synth.rpt
+INFO: HLS-REPORT: Running report: report_utilization -hierarchical -hierarchical_depth 5 -file ./report/peakPicker_utilization_hierarchical_synth.rpt
+INFO: HLS-REPORT: Running report: report_timing_summary -file ./report/peakPicker_timing_synth.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 6 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+report_timing_summary: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2653.641 ; gain = 624.008 ; free physical = 2364 ; free virtual = 42519
+INFO: HLS-REPORT: Running report: report_timing -max_paths 10 -file ./report/peakPicker_timing_paths_synth.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 6 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 10 -nworst 1 -delay_type max -sort_by slack.
+INFO: HLS-REPORT: Running report: report_design_analysis -file ./report/peakPicker_design_analysis_synth.rpt
+INFO: [Implflow 30-839]  
+INFO: HLS-REPORT: Running report: ::tclapp::xilinx::designutils::report_failfast -detailed_report synth -file ./report/peakPicker_failfast_synth.rpt
+ -I- design metrics completed in 0 seconds
+ -I- DONT_TOUCH metric completed in 0 seconds
+ -I- MARK_DEBUG metric completed in 1 seconds
+ -I- utilization metrics completed in 0 seconds
+ -I- control set metrics completed in 1 seconds
+ -I- methodology check metrics completed in 0 seconds
+ -I- average fanout metrics completed in 0 seconds (0 modules)
+ -I- non-FD high fanout nets completed in 1 seconds
+ -I- path budgeting metrics completed in 0 seconds
+#  +-----------------------------------------------------------------------------------------+
+#  | Design Summary                                                                          |
+#  | design_1                                                                                |
+#  | xc7k410tffg900-2                                                                        |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | Criteria                                                  | Guideline | Actual | Status |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | LUT                                                       | 70%       | 1.95%  | OK     |
+#  | FD                                                        | 50%       | 0.86%  | OK     |
+#  | LUTRAM+SRL                                                | 25%       | 0.00%  | OK     |
+#  | MUXF7                                                     | 15%       | 0.25%  | OK     |
+#  | DSP                                                       | 80%       | 0.00%  | OK     |
+#  | RAMB/FIFO                                                 | 80%       | 0.00%  | OK     |
+#  | DSP+RAMB+URAM (Avg)                                       | 70%       | 0.00%  | OK     |
+#  | BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+#  | DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+#  | MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+#  | Control Sets                                              | 4766      | 27     | OK     |
+#  | Average Fanout for modules > 100k cells                   | 4         | 3.17   | OK     |
+#  | Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+#  | Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+#  | TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+#  | TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+#  | TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+#  | TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | Number of paths above max LUT budgeting (0.500ns)         | 0         | 0      | OK     |
+#  | Number of paths above max Net budgeting (0.350ns)         | 0         | 0      | OK     |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+ -I- Generated file /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/report/peakPicker_failfast_synth.rpt
+ -I- Number of criteria to review: 0
+ -I- This report should be run before placing the design and uses conservative guidelines beyond which runtime and timing closure will likely be more challenging
+ -I- report_failfast completed in 3 seconds
+TIMESTAMP: HLS-REPORT: synthesis gen_data_dict_vivado: 2025-04-01 14:04:48 AEDT
+TIMESTAMP: HLS-REPORT: synth extract_util_hier: 2025-04-01 14:04:48 AEDT
+TIMESTAMP: HLS-REPORT: synth get_cell_hier_data: 2025-04-01 14:04:48 AEDT
+TIMESTAMP: HLS-REPORT: synth get_timing_paths: 2025-04-01 14:04:48 AEDT
+TIMESTAMP: HLS-REPORT: synth process timing paths: 2025-04-01 14:04:48 AEDT
+TIMESTAMP: HLS-REPORT: synth get_all_vv_rpt_files: 2025-04-01 14:04:48 AEDT
+TIMESTAMP: HLS-REPORT: synthesis write_reports_vivado: 2025-04-01 14:04:48 AEDT
+HLS EXTRACTION: synth area_totals:  0 254200 508400 1540 1590 0 0
+HLS EXTRACTION: synth area_current: 0 4952 4394 0 0 0 0 0 0 0
+HLS EXTRACTION: synth resources_dict: AVAIL_LUT 254200 LUT 4952 AVAIL_FF 508400 FF 4394 AVAIL_DSP 1540 DSP 0 AVAIL_BRAM 1590 BRAM 0 AVAIL_URAM 0 URAM 0 LATCH 0 SRL 0 AVAIL_CLB 0 CLB 0
+INFO: HLS-REPORT: generated /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/report/vivado_syn.xml
+INFO: HLS-REPORT: generated /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/report/verilog/peakPicker_export.rpt
+
+
+Implementation tool: Xilinx Vivado v.2023.2
+Project:             proj_peakPicker
+Solution:            solution1
+Device target:       xc7k410t-ffg900-2
+Report date:         Tue Apr 01 14:04:48 AEDT 2025
+
+#=== Post-Synthesis Resource usage ===
+SLICE:            0
+LUT:           4952
+FF:            4394
+DSP:              0
+BRAM:             0
+URAM:             0
+LATCH:            0
+SRL:              0
+CLB:              0
+
+#=== Final timing ===
+CP required:                     3.906
+CP achieved post-synthesis:      3.004
+Timing met
+
+TIMESTAMP: HLS-REPORT: synthesis end: 2025-04-01 14:04:48 AEDT
+# if { $has_impl } {
+#   # launch run impl
+#   if { [llength $impl_props] } {
+#     set_property -dict $impl_props [get_runs impl_1]
+#   }
+#   launch_runs impl_1
+#   wait_on_run impl_1
+#   # impl reports
+#   hls_vivado_reports_impl impl_1 $report_options
+# }
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 2808.336 ; gain = 0.000 ; free physical = 2347 ; free virtual = 42504
+WARNING: [Common 17-210] 'write_hwdef' is deprecated.
+[Tue Apr  1 14:04:49 2025] Launched impl_1...
+Run output will be captured here: /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/impl_1/runme.log
+[Tue Apr  1 14:04:49 2025] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log bd_0_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source bd_0_wrapper.tcl -notrace
+
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source bd_0_wrapper.tcl -notrace
+Command: open_checkpoint /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/impl_1/bd_0_wrapper.dcp
+INFO: [Device 21-403] Loading part xc7k410tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1745.973 ; gain = 0.000 ; free physical = 1465 ; free virtual = 41617
+INFO: [Netlist 29-17] Analyzing 350 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1828.629 ; gain = 0.000 ; free physical = 1367 ; free virtual = 41519
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2477.426 ; gain = 0.000 ; free physical = 802 ; free virtual = 40954
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2023.2 (64-bit) build 4029153
+open_checkpoint: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2477.461 ; gain = 1172.152 ; free physical = 799 ; free virtual = 40951
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k410t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k410t'
+INFO: [Common 17-1540] The version limit for your license is '2025.02' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.61 . Memory (MB): peak = 2569.109 ; gain = 72.773 ; free physical = 782 ; free virtual = 40934
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: eb27968a
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2569.109 ; gain = 0.000 ; free physical = 782 ; free virtual = 40934
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: eb27968a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 713 ; free virtual = 40671
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: eb27968a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 713 ; free virtual = 40671
+Phase 1 Initialization | Checksum: eb27968a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 713 ; free virtual = 40671
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: eb27968a
+
+Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40672
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: eb27968a
+
+Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40671
+Phase 2 Timer Update And Timing Data Collection | Checksum: eb27968a
+
+Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40671
+
+Phase 3 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: eb27968a
+
+Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.2 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 712 ; free virtual = 40670
+Retarget | Checksum: eb27968a
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: eb27968a
+
+Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.25 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 712 ; free virtual = 40670
+Constant propagation | Checksum: eb27968a
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 1004a4196
+
+Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40672
+Sweep | Checksum: 1004a4196
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 1004a4196
+
+Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.34 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40672
+BUFG optimization | Checksum: 1004a4196
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 1004a4196
+
+Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.34 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40672
+Shift Register Optimization | Checksum: 1004a4196
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 1004a4196
+
+Time (s): cpu = 00:00:00.53 ; elapsed = 00:00:00.36 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40672
+Post Processing Netlist | Checksum: 1004a4196
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: d4fb3395
+
+Time (s): cpu = 00:00:00.56 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40671
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40671
+Phase 9.2 Verifying Netlist Connectivity | Checksum: d4fb3395
+
+Time (s): cpu = 00:00:00.58 ; elapsed = 00:00:00.41 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40671
+Phase 9 Finalization | Checksum: d4fb3395
+
+Time (s): cpu = 00:00:00.58 ; elapsed = 00:00:00.41 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40671
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: d4fb3395
+
+Time (s): cpu = 00:00:00.58 ; elapsed = 00:00:00.41 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40671
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 714 ; free virtual = 40671
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: d4fb3395
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 713 ; free virtual = 40671
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: d4fb3395
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 713 ; free virtual = 40671
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 713 ; free virtual = 40671
+Ending Netlist Obfuscation Task | Checksum: d4fb3395
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2834.914 ; gain = 0.000 ; free physical = 713 ; free virtual = 40671
+INFO: [Common 17-83] Releasing license: Implementation
+32 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+INFO: [runtcl-4] Executing : report_drc -file bd_0_wrapper_drc_opted.rpt -pb bd_0_wrapper_drc_opted.pb -rpx bd_0_wrapper_drc_opted.rpx
+Command: report_drc -file bd_0_wrapper_drc_opted.rpt -pb bd_0_wrapper_drc_opted.pb -rpx bd_0_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/impl_1/bd_0_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2850.922 ; gain = 0.000 ; free physical = 697 ; free virtual = 40655
+INFO: [Common 17-1381] The checkpoint '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/impl_1/bd_0_wrapper_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k410t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k410t'
+INFO: [Common 17-1540] The version limit for your license is '2025.02' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 6 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2890.941 ; gain = 0.000 ; free physical = 676 ; free virtual = 40636
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1f1e6e6d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2890.941 ; gain = 0.000 ; free physical = 676 ; free virtual = 40636
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2890.941 ; gain = 0.000 ; free physical = 676 ; free virtual = 40636
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 290680a5
+
+Time (s): cpu = 00:00:00.94 ; elapsed = 00:00:00.53 . Memory (MB): peak = 2890.941 ; gain = 0.000 ; free physical = 679 ; free virtual = 40638
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: a9280c17
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2895.961 ; gain = 5.020 ; free physical = 678 ; free virtual = 40637
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: a9280c17
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2895.961 ; gain = 5.020 ; free physical = 677 ; free virtual = 40636
+Phase 1 Placer Initialization | Checksum: a9280c17
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2895.961 ; gain = 5.020 ; free physical = 677 ; free virtual = 40636
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: d9498808
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2895.961 ; gain = 5.020 ; free physical = 673 ; free virtual = 40632
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 7013bd0d
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 2895.961 ; gain = 5.020 ; free physical = 679 ; free virtual = 40638
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 7013bd0d
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 2895.961 ; gain = 5.020 ; free physical = 679 ; free virtual = 40638
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 831d5a13
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:07 . Memory (MB): peak = 2910.008 ; gain = 19.066 ; free physical = 661 ; free virtual = 40621
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 2 LUTNM shape to break, 62 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 2, two critical 0, total 2, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 29 nets or LUTs. Breaked 2 LUTs, combined 27 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2910.008 ; gain = 0.000 ; free physical = 662 ; free virtual = 40621
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            2  |             27  |                    29  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            2  |             27  |                    29  |           0  |           9  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 806aab6f
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:08 . Memory (MB): peak = 2912.977 ; gain = 22.035 ; free physical = 659 ; free virtual = 40619
+Phase 2.4 Global Placement Core | Checksum: 4558e34b
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:08 . Memory (MB): peak = 2912.977 ; gain = 22.035 ; free physical = 658 ; free virtual = 40617
+Phase 2 Global Placement | Checksum: 4558e34b
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:08 . Memory (MB): peak = 2912.977 ; gain = 22.035 ; free physical = 661 ; free virtual = 40621
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 106a8e6cd
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:08 . Memory (MB): peak = 2912.977 ; gain = 22.035 ; free physical = 660 ; free virtual = 40619
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: af8102f3
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:09 . Memory (MB): peak = 2915.945 ; gain = 25.004 ; free physical = 663 ; free virtual = 40622
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 193ae71db
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:09 . Memory (MB): peak = 2915.945 ; gain = 25.004 ; free physical = 653 ; free virtual = 40613
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 13e7b1963
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:09 . Memory (MB): peak = 2915.945 ; gain = 25.004 ; free physical = 652 ; free virtual = 40611
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 11cd8462d
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:09 . Memory (MB): peak = 2915.945 ; gain = 25.004 ; free physical = 625 ; free virtual = 40585
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1a7141690
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:14 . Memory (MB): peak = 2915.945 ; gain = 25.004 ; free physical = 635 ; free virtual = 40595
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 11da3ae61
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:14 . Memory (MB): peak = 2915.945 ; gain = 25.004 ; free physical = 632 ; free virtual = 40591
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 5376513e
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:14 . Memory (MB): peak = 2915.945 ; gain = 25.004 ; free physical = 632 ; free virtual = 40591
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: bb0bb183
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:15 . Memory (MB): peak = 2927.750 ; gain = 36.809 ; free physical = 639 ; free virtual = 40598
+Phase 3 Detail Placement | Checksum: bb0bb183
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:15 . Memory (MB): peak = 2927.750 ; gain = 36.809 ; free physical = 639 ; free virtual = 40598
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: d466a1d8
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 6 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.008 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 15f911cc6
+
+Time (s): cpu = 00:00:00.55 ; elapsed = 00:00:00.2 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 628 ; free virtual = 40587
+INFO: [Place 46-33] Processed net bd_0_i/hls_inst/inst/CTRL_s_axi_U/SR[0], BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 1, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 15f911cc6
+
+Time (s): cpu = 00:00:00.76 ; elapsed = 00:00:00.38 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 629 ; free virtual = 40589
+Phase 4.1.1.1 BUFG Insertion | Checksum: d466a1d8
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:17 . Memory (MB): peak = 2973.555 ; gain = 82.613 ; free physical = 629 ; free virtual = 40589
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.447. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1b66a6afc
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2973.555 ; gain = 82.613 ; free physical = 808 ; free virtual = 40333
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2973.555 ; gain = 82.613 ; free physical = 808 ; free virtual = 40333
+Phase 4.1 Post Commit Optimization | Checksum: 1b66a6afc
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2973.555 ; gain = 82.613 ; free physical = 814 ; free virtual = 40339
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1b66a6afc
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2973.555 ; gain = 82.613 ; free physical = 813 ; free virtual = 40339
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                2x2|
+|___________|___________________|___________________|
+|       East|                1x1|                2x2|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1b66a6afc
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2973.555 ; gain = 82.613 ; free physical = 814 ; free virtual = 40339
+Phase 4.3 Placer Reporting | Checksum: 1b66a6afc
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2973.555 ; gain = 82.613 ; free physical = 814 ; free virtual = 40339
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 814 ; free virtual = 40339
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2973.555 ; gain = 82.613 ; free physical = 814 ; free virtual = 40339
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 20a9e87e3
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2973.555 ; gain = 82.613 ; free physical = 814 ; free virtual = 40340
+Ending Placer Task | Checksum: 16f96a849
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2973.555 ; gain = 82.613 ; free physical = 814 ; free virtual = 40340
+77 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:01:35 ; elapsed = 00:01:11 . Memory (MB): peak = 2973.555 ; gain = 122.633 ; free physical = 814 ; free virtual = 40339
+INFO: [runtcl-4] Executing : report_io -file bd_0_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 797 ; free virtual = 40323
+INFO: [runtcl-4] Executing : report_utilization -file bd_0_wrapper_utilization_placed.rpt -pb bd_0_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file bd_0_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 773 ; free virtual = 40299
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 789 ; free virtual = 40315
+Wrote PlaceDB: Time (s): cpu = 00:00:00.96 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 793 ; free virtual = 40327
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 793 ; free virtual = 40327
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 793 ; free virtual = 40327
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 793 ; free virtual = 40327
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 793 ; free virtual = 40328
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.4 . Memory (MB): peak = 2973.555 ; gain = 0.000 ; free physical = 793 ; free virtual = 40328
+INFO: [Common 17-1381] The checkpoint '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/impl_1/bd_0_wrapper_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k410t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k410t'
+INFO: [Common 17-1540] The version limit for your license is '2025.02' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+
+Starting Initial Update Timing Task
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.72 . Memory (MB): peak = 3053.594 ; gain = 0.000 ; free physical = 801 ; free virtual = 40329
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+87 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3053.594 ; gain = 0.000 ; free physical = 801 ; free virtual = 40329
+Wrote PlaceDB: Time (s): cpu = 00:00:00.93 ; elapsed = 00:00:00.32 . Memory (MB): peak = 3053.594 ; gain = 0.000 ; free physical = 807 ; free virtual = 40343
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3053.594 ; gain = 0.000 ; free physical = 807 ; free virtual = 40343
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3053.594 ; gain = 0.000 ; free physical = 807 ; free virtual = 40343
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3053.594 ; gain = 0.000 ; free physical = 807 ; free virtual = 40344
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3053.594 ; gain = 0.000 ; free physical = 803 ; free virtual = 40340
+Write Physdb Complete: Time (s): cpu = 00:00:00.97 ; elapsed = 00:00:00.35 . Memory (MB): peak = 3053.594 ; gain = 0.000 ; free physical = 803 ; free virtual = 40340
+INFO: [Common 17-1381] The checkpoint '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/impl_1/bd_0_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k410t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k410t'
+INFO: [Common 17-1540] The version limit for your license is '2025.02' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 6 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 7c3014b7 ConstDB: 0 ShapeSum: f3669392 RouteDB: 0
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[18]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[18]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wstrb[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wstrb[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[19]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[19]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[26]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[26]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wstrb[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wstrb[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[27]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[27]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[30]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[30]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[31]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[31]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-197] Clock port "ap_clk" does not have an associated HD.CLK_SRC. Without this constraint, timing analysis may not be accurate and upstream checks cannot be done to ensure correct clock placement.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[22]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[22]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[23]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[23]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[28]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[28]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[29]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[29]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_araddr[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_araddr[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_araddr[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_araddr[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_araddr[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_araddr[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_araddr[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_araddr[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_araddr[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_araddr[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[16]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[16]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[17]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[17]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[24]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[24]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[25]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[25]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[12]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[12]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wstrb[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wstrb[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[14]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[14]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[15]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[15]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wvalid" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wvalid". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_awvalid" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_awvalid". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_awaddr[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_awaddr[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_awaddr[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_awaddr[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_awaddr[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_awaddr[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_awaddr[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_awaddr[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_awaddr[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_awaddr[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "ap_rst_n" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "ap_rst_n". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_bready" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_bready". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[20]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[20]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[21]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[21]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_arvalid" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_arvalid". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_rready" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_rready". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "peakCountStream_tready" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "peakCountStream_tready". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wstrb[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wstrb[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[8]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[8]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "s_axi_CTRL_wdata[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "s_axi_CTRL_wdata[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "peakLocStream_tready" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "peakLocStream_tready". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tvalid" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tvalid". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[14]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[14]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[15]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[15]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[16]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[16]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[17]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[17]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[18]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[18]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[19]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[19]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tvalid" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tvalid". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[16]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[16]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[17]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[17]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[18]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[18]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[19]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[19]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[8]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[8]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[8]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[8]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[12]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[12]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "xcorrStream_tdata[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "xcorrStream_tdata[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[14]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[14]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[15]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[15]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[12]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[12]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "thresholdStream_tdata[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "thresholdStream_tdata[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Constraints 18-8777] Unable to split tiles. All required files are not available.
+Post Restoration Checksum: NetGraph: 2bed5fd8 | NumContArr: e8b5ef32 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 299f54444
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:29 . Memory (MB): peak = 3325.656 ; gain = 272.062 ; free physical = 698 ; free virtual = 40038
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 299f54444
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:30 . Memory (MB): peak = 3325.656 ; gain = 272.062 ; free physical = 698 ; free virtual = 40037
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 299f54444
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:30 . Memory (MB): peak = 3325.656 ; gain = 272.062 ; free physical = 698 ; free virtual = 40037
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 28334d833
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:31 . Memory (MB): peak = 3421.703 ; gain = 368.109 ; free physical = 718 ; free virtual = 39939
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.582  | TNS=0.000  | WHS=0.065  | THS=0.000  |
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 6206
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 6206
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 230a6d96a
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:32 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 716 ; free virtual = 39938
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 230a6d96a
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:32 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 716 ; free virtual = 39938
+
+Phase 3.2 Initial Net Routing
+Phase 3.2 Initial Net Routing | Checksum: 2313fde46
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:33 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 714 ; free virtual = 39936
+Phase 3 Initial Routing | Checksum: 2313fde46
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:33 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 714 ; free virtual = 39936
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1002
+ Number of Nodes with overlaps = 165
+ Number of Nodes with overlaps = 72
+ Number of Nodes with overlaps = 31
+ Number of Nodes with overlaps = 17
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.222  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1d8c12c90
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:41 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 703 ; free virtual = 39919
+Phase 4 Rip-up And Reroute | Checksum: 1d8c12c90
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:41 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 703 ; free virtual = 39919
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 1d8c12c90
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:41 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 703 ; free virtual = 39919
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1d8c12c90
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:41 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 703 ; free virtual = 39919
+Phase 5 Delay and Skew Optimization | Checksum: 1d8c12c90
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:41 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 703 ; free virtual = 39919
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1e9b48f48
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:41 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 703 ; free virtual = 39918
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.222  | TNS=0.000  | WHS=0.089  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1e9b48f48
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:41 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 703 ; free virtual = 39918
+Phase 6 Post Hold Fix | Checksum: 1e9b48f48
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:41 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 703 ; free virtual = 39918
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.517048 %
+  Global Horizontal Routing Utilization  = 0.601755 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1e9b48f48
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:41 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 703 ; free virtual = 39919
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1e9b48f48
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:41 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 704 ; free virtual = 39920
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 20e155e06
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:42 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 696 ; free virtual = 39911
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.222  | TNS=0.000  | WHS=0.089  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 20e155e06
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:42 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 716 ; free virtual = 39932
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 11 Post-Route Event Processing
+Phase 11 Post-Route Event Processing | Checksum: 13a44b7ea
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:42 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 724 ; free virtual = 39940
+Ending Routing Task | Checksum: 13a44b7ea
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:42 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 722 ; free virtual = 39938
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+102 Infos, 99 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:11 ; elapsed = 00:00:43 . Memory (MB): peak = 3427.789 ; gain = 374.195 ; free physical = 722 ; free virtual = 39938
+INFO: [runtcl-4] Executing : report_drc -file bd_0_wrapper_drc_routed.rpt -pb bd_0_wrapper_drc_routed.pb -rpx bd_0_wrapper_drc_routed.rpx
+Command: report_drc -file bd_0_wrapper_drc_routed.rpt -pb bd_0_wrapper_drc_routed.pb -rpx bd_0_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/impl_1/bd_0_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file bd_0_wrapper_methodology_drc_routed.rpt -pb bd_0_wrapper_methodology_drc_routed.pb -rpx bd_0_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file bd_0_wrapper_methodology_drc_routed.rpt -pb bd_0_wrapper_methodology_drc_routed.pb -rpx bd_0_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: [DRC 23-133] Running Methodology with 6 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/impl_1/bd_0_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file bd_0_wrapper_power_routed.rpt -pb bd_0_wrapper_power_summary_routed.pb -rpx bd_0_wrapper_power_routed.rpx
+Command: report_power -file bd_0_wrapper_power_routed.rpt -pb bd_0_wrapper_power_summary_routed.pb -rpx bd_0_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+112 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file bd_0_wrapper_route_status.rpt -pb bd_0_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file bd_0_wrapper_timing_summary_routed.rpt -pb bd_0_wrapper_timing_summary_routed.pb -rpx bd_0_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 6 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file bd_0_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file bd_0_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file bd_0_wrapper_bus_skew_routed.rpt -pb bd_0_wrapper_bus_skew_routed.pb -rpx bd_0_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 6 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3499.824 ; gain = 0.000 ; free physical = 680 ; free virtual = 39903
+Wrote PlaceDB: Time (s): cpu = 00:00:00.95 ; elapsed = 00:00:00.33 . Memory (MB): peak = 3499.824 ; gain = 0.000 ; free physical = 673 ; free virtual = 39904
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3499.824 ; gain = 0.000 ; free physical = 673 ; free virtual = 39904
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3499.824 ; gain = 0.000 ; free physical = 669 ; free virtual = 39901
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3499.824 ; gain = 0.000 ; free physical = 669 ; free virtual = 39902
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3499.824 ; gain = 0.000 ; free physical = 669 ; free virtual = 39903
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.42 . Memory (MB): peak = 3499.824 ; gain = 0.000 ; free physical = 669 ; free virtual = 39903
+INFO: [Common 17-1381] The checkpoint '/home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/project.runs/impl_1/bd_0_wrapper_routed.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  1 14:07:23 2025...
+[Tue Apr  1 14:07:29 2025] impl_1 finished
+wait_on_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:02:40 . Memory (MB): peak = 2808.336 ; gain = 0.000 ; free physical = 3008 ; free virtual = 42234
+TIMESTAMP: HLS-REPORT: implementation open_run: 2025-04-01 14:07:29 AEDT
+INFO: HLS-REPORT: Opening implementation design database: open_run impl_1
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2808.336 ; gain = 0.000 ; free physical = 3008 ; free virtual = 42230
+INFO: [Netlist 29-17] Analyzing 350 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2860.945 ; gain = 2.000 ; free physical = 2935 ; free virtual = 42157
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3008.312 ; gain = 0.000 ; free physical = 2845 ; free virtual = 42067
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3008.312 ; gain = 0.000 ; free physical = 2845 ; free virtual = 42067
+Read PlaceDB: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.25 . Memory (MB): peak = 3008.312 ; gain = 0.000 ; free physical = 2843 ; free virtual = 42065
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3008.312 ; gain = 0.000 ; free physical = 2843 ; free virtual = 42065
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 3008.312 ; gain = 0.000 ; free physical = 2855 ; free virtual = 42076
+Read Physdb Files: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.39 . Memory (MB): peak = 3008.312 ; gain = 0.000 ; free physical = 2855 ; free virtual = 42077
+Restored from archive | CPU: 0.390000 secs | Memory: 8.593170 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.39 . Memory (MB): peak = 3008.312 ; gain = 0.000 ; free physical = 2855 ; free virtual = 42077
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3008.312 ; gain = 0.000 ; free physical = 2855 ; free virtual = 42076
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+TIMESTAMP: HLS-REPORT: implementation generate_reports_vivado: 2025-04-01 14:07:31 AEDT
+INFO: HLS-REPORT: Running report: report_utilization -file ./report/peakPicker_utilization_routed.rpt
+INFO: HLS-REPORT: Running report: report_utilization -hierarchical -hierarchical_depth 5 -file ./report/peakPicker_utilization_hierarchical_routed.rpt
+INFO: HLS-REPORT: Running report: report_timing_summary -file ./report/peakPicker_timing_routed.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 6 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: HLS-REPORT: Running report: report_route_status -file ./report/peakPicker_status_routed.rpt
+INFO: HLS-REPORT: Running report: report_timing -max_paths 10 -file ./report/peakPicker_timing_paths_routed.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 6 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 10 -nworst 1 -delay_type max -sort_by slack.
+INFO: HLS-REPORT: Running report: report_design_analysis -file ./report/peakPicker_design_analysis_routed.rpt
+INFO: HLS-REPORT: Running report: ::tclapp::xilinx::designutils::report_failfast -detailed_report impl -file ./report/peakPicker_failfast_routed.rpt
+ -I- design metrics completed in 1 seconds
+ -I- DONT_TOUCH metric completed in 0 seconds
+ -I- MARK_DEBUG metric completed in 0 seconds
+ -I- utilization metrics completed in 1 seconds
+ -I- control set metrics completed in 0 seconds
+ -I- methodology check metrics completed in 1 seconds
+ -I- average fanout metrics completed in 0 seconds (0 modules)
+ -I- non-FD high fanout nets completed in 0 seconds
+ -I- path budgeting metrics completed in 1 seconds
+#  +-----------------------------------------------------------------------------------------+
+#  | Design Summary                                                                          |
+#  | impl_1                                                                                  |
+#  | xc7k410tffg900-2                                                                        |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | Criteria                                                  | Guideline | Actual | Status |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | LUT                                                       | 70%       | 1.94%  | OK     |
+#  | FD                                                        | 50%       | 0.86%  | OK     |
+#  | LUTRAM+SRL                                                | 25%       | 0.00%  | OK     |
+#  | MUXF7                                                     | 15%       | 0.25%  | OK     |
+#  | DSP                                                       | 80%       | 0.00%  | OK     |
+#  | RAMB/FIFO                                                 | 80%       | 0.00%  | OK     |
+#  | DSP+RAMB+URAM (Avg)                                       | 70%       | 0.00%  | OK     |
+#  | BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+#  | DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+#  | MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+#  | Control Sets                                              | 4766      | 27     | OK     |
+#  | Average Fanout for modules > 100k cells                   | 4         | 3.17   | OK     |
+#  | Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+#  | Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+#  | TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+#  | TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+#  | TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+#  | TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+#  | Number of paths above max LUT budgeting (0.500ns)         | 0         | 0      | OK     |
+#  | Number of paths above max Net budgeting (0.350ns)         | 0         | 0      | OK     |
+#  +-----------------------------------------------------------+-----------+--------+--------+
+ -I- Generated file /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/report/peakPicker_failfast_routed.rpt
+ -I- Number of criteria to review: 0
+ -I- This report should be run before placing the design and uses conservative guidelines beyond which runtime and timing closure will likely be more challenging
+ -I- report_failfast completed in 4 seconds
+TIMESTAMP: HLS-REPORT: implementation gen_data_dict_vivado: 2025-04-01 14:07:37 AEDT
+TIMESTAMP: HLS-REPORT: impl extract_util_hier: 2025-04-01 14:07:37 AEDT
+TIMESTAMP: HLS-REPORT: impl get_cell_hier_data: 2025-04-01 14:07:37 AEDT
+TIMESTAMP: HLS-REPORT: impl get_timing_paths: 2025-04-01 14:07:37 AEDT
+TIMESTAMP: HLS-REPORT: impl process timing paths: 2025-04-01 14:07:37 AEDT
+TIMESTAMP: HLS-REPORT: impl get_all_vv_rpt_files: 2025-04-01 14:07:37 AEDT
+TIMESTAMP: HLS-REPORT: implementation write_reports_vivado: 2025-04-01 14:07:37 AEDT
+HLS EXTRACTION: impl area_totals:  63550 254200 508400 1540 1590 0 0
+HLS EXTRACTION: impl area_current: 1625 4923 4394 0 0 0 0 0 0 0
+HLS EXTRACTION: impl resources_dict: AVAIL_SLICE 63550 SLICE 1625 AVAIL_LUT 254200 LUT 4923 AVAIL_FF 508400 FF 4394 AVAIL_DSP 1540 DSP 0 AVAIL_BRAM 1590 BRAM 0 AVAIL_URAM 0 URAM 0 LATCH 0 SRL 0 AVAIL_CLB 0 CLB 0
+INFO: HLS-REPORT: generated /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/verilog/report/vivado_impl.xml
+INFO: HLS-REPORT: generated /home/jielei/Projects/UTS/peakPicker/HLS/optim2/proj_peakPicker/solution1/impl/report/verilog/peakPicker_export.rpt
+
+
+Implementation tool: Xilinx Vivado v.2023.2
+Project:             proj_peakPicker
+Solution:            solution1
+Device target:       xc7k410t-ffg900-2
+Report date:         Tue Apr 01 14:07:37 AEDT 2025
+
+#=== Post-Implementation Resource usage ===
+SLICE:         1625
+LUT:           4923
+FF:            4394
+DSP:              0
+BRAM:             0
+URAM:             0
+LATCH:            0
+SRL:              0
+CLB:              0
+
+#=== Final timing ===
+CP required:                     3.906
+CP achieved post-synthesis:      3.004
+CP achieved post-implementation: 3.684
+Timing met
+
+TIMESTAMP: HLS-REPORT: implementation end: 2025-04-01 14:07:37 AEDT
+INFO: HLS-REPORT: impl run complete: worst setup slack (WNS)=0.222327, worst hold slack (WHS)=0.088931, total pulse width slack(TPWS)=0.000000, number of unrouted nets=0
+# hls_vivado_reports_finalize $report_options
+TIMESTAMP: HLS-REPORT: all reports complete: 2025-04-01 14:07:37 AEDT
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  1 14:07:37 2025...
+INFO: [HLS 200-802] Generated output file proj_peakPicker/solution1/impl/export.dcp
+INFO: [HLS 200-802] Generated output file proj_peakPicker/solution1/impl/export.veo
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 181.06 seconds. CPU system time: 10.5 seconds. Elapsed time: 343.55 seconds; current allocated memory: 2.559 MB.
+INFO: [HLS 200-112] Total CPU user time: 425.59 seconds. Total CPU system time: 24.36 seconds. Total elapsed time: 583.31 seconds; peak allocated memory: 362.105 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Tue Apr  1 14:07:41 2025...

@@ -1,0 +1,31 @@
+===============================================
+FPGA Implementation Report Summary
+Generated on: 2025-04-04 16:49:29.476667
+===============================================
+
+RESOURCE UTILIZATION SUMMARY:
+-----------------------------
+      origin  perf_opt1  perf_opt2  perf_opt3  opt4_HDL  opt4_HLS
+LUT     7457        264       4923        284       270       336
+FF     10624        539       4394        666       199       296
+BRAM      10         20          0          0         0         0
+
+TIMING SUMMARY (MHz):
+--------------------
+                 origin  perf_opt1  perf_opt2  perf_opt3  opt4_HDL  opt4_HLS
+Target          256.016    256.016    256.016    256.016   200.000   200.000
+Post-Synthesis  236.574    337.041    332.889    387.447   290.867   414.938
+Post-Route      221.288    282.326    271.444    398.406   285.388   338.753
+
+LATENCY SUMMARY (cycles):
+------------------------
+origin       108328
+perf_opt1    311594
+perf_opt2    275844
+perf_opt3      6035
+opt4_HDL      12012
+opt4_HLS     343400
+
+===============================================
+End of Report
+===============================================

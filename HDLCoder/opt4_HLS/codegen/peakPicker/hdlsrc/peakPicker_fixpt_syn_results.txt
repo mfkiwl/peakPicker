@@ -1,0 +1,222 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+  **** SW Build 4023990 on Oct 11 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'jielei' on host 'UTS-HP-WS' (Linux_x86_64 version 6.8.0-52-generic) on Mon Mar 31 21:52:59 AEDT 2025
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'syn_script.tcl'
+INFO: [HLS 200-1510] Running: source syn_script.tcl
+INFO: [HLS 200-1510] Running: open_project vitis_prj 
+INFO: [HLS 200-10] Opening project '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj'.
+INFO: [HLS 200-1510] Running: set_top peakPicker_fixpt_wrapper 
+INFO: [HLS 200-1510] Running: add_files peakPicker_fixptClass.hpp 
+INFO: [HLS 200-10] Adding design file 'peakPicker_fixptClass.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files rtwtypes.hpp 
+INFO: [HLS 200-10] Adding design file 'rtwtypes.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files peakPicker_fixpt_wrapper.cpp -cflags -I/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc -I/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2  
+INFO: [HLS 200-10] Adding design file 'peakPicker_fixpt_wrapper.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb peakPicker_fixptClass_tb.hpp 
+INFO: [HLS 200-10] Adding test bench file 'peakPicker_fixptClass_tb.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb peakPicker_fixpt_main.cpp -cflags -I/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc -I/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2  
+INFO: [HLS 200-10] Adding test bench file 'peakPicker_fixpt_main.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb locations_expected.dat 
+INFO: [HLS 200-10] Adding test bench file 'locations_expected.dat' to the project
+INFO: [HLS 200-1510] Running: add_files -tb threshold.dat 
+INFO: [HLS 200-10] Adding test bench file 'threshold.dat' to the project
+INFO: [HLS 200-1510] Running: add_files -tb valid_expected.dat 
+INFO: [HLS 200-10] Adding test bench file 'valid_expected.dat' to the project
+INFO: [HLS 200-1510] Running: add_files -tb xcorr.dat 
+INFO: [HLS 200-10] Adding test bench file 'xcorr.dat' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vitis 
+INFO: [HLS 200-10] Opening solution '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xc7k410tfbg900-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7k410t-fbg900-2'
+INFO: [HLS 200-1510] Running: create_clock -period 200MHz -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.08 seconds; current allocated memory: 256.973 MB.
+INFO: [HLS 200-10] Analyzing design file 'peakPicker_fixpt_wrapper.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3.32 seconds. CPU system time: 0.6 seconds. Elapsed time: 3.92 seconds; current allocated memory: 258.875 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 200-1995] There were 2,311 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 168 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 105 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 131 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 109 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 109 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 109 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 109 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 109 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 110 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 109 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 109 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 109 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 109 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 111 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 122 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/vitis_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-178] Inlining function 'peakPicker_fixptClass::peakPicker_fixpt(ap_ufixed<14, -7, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<14, -7, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<13>&, bool&)' into 'peakPicker_fixpt_wrapper(ap_ufixed<14, -7, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_ufixed<14, -7, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<13>&, bool&)' (peakPicker_fixpt_wrapper.cpp:15:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< L3> at /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/peakPicker_fixptClass.hpp:93:5 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< L4> at /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/peakPicker_fixptClass.hpp:102:5 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< L5> at /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/peakPicker_fixptClass.hpp:108:5 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< L6> at /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/peakPicker_fixptClass.hpp:128:7 
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.57 seconds. CPU system time: 0.46 seconds. Elapsed time: 7.59 seconds; current allocated memory: 260.207 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 260.207 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 260.848 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 260.895 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/peakPicker_fixptClass.hpp:128:20) to (/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2/codegen/peakPicker/hdlsrc/peakPicker_fixptClass.hpp:128:7) in function 'peakPicker_fixpt_wrapper'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 283.125 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 312.457 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'peakPicker_fixpt_wrapper' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'peakPicker_fixpt_wrapper_Pipeline_L3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'L3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.06 seconds; current allocated memory: 313.754 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 313.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'peakPicker_fixpt_wrapper_Pipeline_L4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'L4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 314.133 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 314.133 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'peakPicker_fixpt_wrapper_Pipeline_L5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'L5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 314.441 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 314.441 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'peakPicker_fixpt_wrapper_Pipeline_L6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'L6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 314.742 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 314.742 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'peakPicker_fixpt_wrapper' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 315.074 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 315.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'peakPicker_fixpt_wrapper_Pipeline_L3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'peakPicker_fixpt_wrapper_Pipeline_L3' pipeline 'L3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'peakPicker_fixpt_wrapper_Pipeline_L3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 315.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'peakPicker_fixpt_wrapper_Pipeline_L4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'peakPicker_fixpt_wrapper_Pipeline_L4' pipeline 'L4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'peakPicker_fixpt_wrapper_Pipeline_L4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 315.473 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'peakPicker_fixpt_wrapper_Pipeline_L5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'peakPicker_fixpt_wrapper_Pipeline_L5' pipeline 'L5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'peakPicker_fixpt_wrapper_Pipeline_L5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 316.242 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'peakPicker_fixpt_wrapper_Pipeline_L6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'peakPicker_fixpt_wrapper_Pipeline_L6' pipeline 'L6' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'peakPicker_fixpt_wrapper_Pipeline_L6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 316.980 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'peakPicker_fixpt_wrapper' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'peakPicker_fixpt_wrapper/xcorr' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'peakPicker_fixpt_wrapper/threshold' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'peakPicker_fixpt_wrapper/locations' to 's_axilite & ap_none'.
+WARNING: [RTGEN 206-101] Port 'locations' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'peakPicker_fixpt_wrapper/valid' to 's_axilite & ap_none'.
+WARNING: [RTGEN 206-101] Port 'valid' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on function 'peakPicker_fixpt_wrapper' to 's_axilite & ap_ctrl_chain'.
+WARNING: [RTGEN 206-101] Register 'inst_index' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'xcorr', 'threshold', 'locations', 'valid' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'peakPicker_fixpt_wrapper'.
+INFO: [RTMG 210-278] Implementing memory 'peakPicker_fixpt_wrapper_inst_xcorrBuffer_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'peakPicker_fixpt_wrapper_t_0_0_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 318.320 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.21 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 321.883 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.32 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.34 seconds; current allocated memory: 327.168 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for peakPicker_fixpt_wrapper.
+INFO: [VLOG 209-307] Generating Verilog RTL for peakPicker_fixpt_wrapper.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 372.44 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7 seconds. CPU system time: 1.2 seconds. Elapsed time: 12.76 seconds; current allocated memory: 70.426 MB.
+INFO: [HLS 200-1510] Running: cosim_design -ldflags  
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+ERROR: [COSIM 212-119] Cannot find XSIM, please set XILINX_VIVADO environment variable.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 0.23 seconds. CPU system time: 0.12 seconds. Elapsed time: 0.35 seconds; current allocated memory: 2.984 MB.
+command 'ap_source' returned error code
+    while executing
+"source syn_script.tcl"
+    invoked from within
+"hls::main syn_script.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"
+INFO: [HLS 200-112] Total CPU user time: 9.04 seconds. Total CPU system time: 1.54 seconds. Total elapsed time: 14.88 seconds; peak allocated memory: 330.430 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Mon Mar 31 21:53:13 2025...

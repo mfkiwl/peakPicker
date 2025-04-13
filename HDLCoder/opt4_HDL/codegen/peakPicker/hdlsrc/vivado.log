@@ -1,0 +1,91 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Mar 31 22:20:34 2025
+# Process ID: 2555564
+# Current directory: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc
+# Command line: vivado -mode batch -source peakPicker_fixpt_vivado_sim.tcl
+# Log file: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado.log
+# Journal file: /home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado.jou
+# Running On: UTS-HP-WS, OS: Linux, CPU Frequency: 1199.996 MHz, CPU Physical cores: 6, Host memory: 67139 MB
+#-----------------------------------------------------------
+source peakPicker_fixpt_vivado_sim.tcl
+# create_project vivado_sim -force
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1337.812 ; gain = 35.836 ; free physical = 3934 ; free virtual = 43232
+# source peakPicker_fixpt_tb_compile.tcl
+## add_files -fileset sim_1 -norecurse peakPicker_fixpt.vhd
+## add_files -fileset sim_1 -norecurse peakPicker_fixpt_pkg.vhd
+## add_files -fileset sim_1 -norecurse peakPicker_fixpt.v
+## add_files -fileset sim_1 -norecurse peakPicker_fixpt_tb.v
+# add_files -fileset sim_1 -norecurse locations_expected.dat
+# add_files -fileset sim_1 -norecurse threshold.dat
+# add_files -fileset sim_1 -norecurse valid_expected.dat
+# add_files -fileset sim_1 -norecurse xcorr.dat
+# update_compile_order -fileset sim_1
+# source peakPicker_fixpt_tb_sim.tcl
+## launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'peakPicker_fixpt_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/opt/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'peakPicker_fixpt_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim/locations_expected.dat'
+INFO: [SIM-utils-43] Exported '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim/threshold.dat'
+INFO: [SIM-utils-43] Exported '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim/valid_expected.dat'
+INFO: [SIM-utils-43] Exported '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim/xcorr.dat'
+INFO: [SIM-utils-43] Exported '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim/locations_expected.dat'
+INFO: [SIM-utils-43] Exported '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim/threshold.dat'
+INFO: [SIM-utils-43] Exported '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim/valid_expected.dat'
+INFO: [SIM-utils-43] Exported '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim/xcorr.dat'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj peakPicker_fixpt_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/peakPicker_fixpt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module peakPicker_fixpt
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/peakPicker_fixpt_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module peakPicker_fixpt_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot peakPicker_fixpt_tb_behav xil_defaultlib.peakPicker_fixpt_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot peakPicker_fixpt_tb_behav xil_defaultlib.peakPicker_fixpt_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.peakPicker_fixpt
+Compiling module xil_defaultlib.peakPicker_fixpt_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot peakPicker_fixpt_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/vivado_sim.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "peakPicker_fixpt_tb_behav -key {Behavioral:sim_1:Functional:peakPicker_fixpt_tb} -tclbatch {peakPicker_fixpt_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source peakPicker_fixpt_tb.tcl
+### current_wave_config
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'peakPicker_fixpt_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1420.922 ; gain = 51.094 ; free physical = 3840 ; free virtual = 43165
+## set_property -name {xsim.simulate.runtime} -value {} -objects [get_filesets sim_1]
+## run all
+**************TEST COMPLETED (PASSED)**************
+$stop called at time : 60060 ns : File "/home/jielei/Projects/UTS/peakPicker/HDLCoder/optim2_HDL/codegen/peakPicker/hdlsrc/peakPicker_fixpt_tb.v" Line 256
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 31 22:20:51 2025...
