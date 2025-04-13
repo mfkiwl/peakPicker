@@ -25,3 +25,4 @@ MATLAB/origin/visualize.md
 prompts/
 scripts/llmOut.md
 scripts/recGen.md
+scripts/generate_hls_code.py
