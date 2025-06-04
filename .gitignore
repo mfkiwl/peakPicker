@@ -10,7 +10,6 @@ HDLCoder/opt4_HLS/codegen/peakPicker/hdlsrc/interface/
 HDLCoder/opt4_HLS/codegen/peakPicker/hdlsrc/vitis_prj/
 HLS/origin/.github/
 HLS/origin/proj_peakPicker/
-HLS/origin/peakPicker.venv
 HLS/origin/prompt.md
 HLS/origin/vitis_hls.log
 HLS/perf_opt1/.github/
@@ -23,6 +22,6 @@ HLS/analyzeReports.py
 MATLAB/origin/peakPicker_tb_vi.m
 MATLAB/origin/visualize.md
 prompts/
-scripts/llmOut.md
-scripts/recGen.md
-scripts/generate_hls_code.py
+# scripts/llmOut.md
+# scripts/recGen.md
+# scripts/generate_hls_code.py
