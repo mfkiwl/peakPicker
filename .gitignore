@@ -26,3 +26,4 @@ prompts/
 # scripts/recGen.md
 # scripts/generate_hls_code.py
 docs/LLM_FPGA_Journal_Article.md
+CLAUDE.md
