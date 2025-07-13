@@ -8,20 +8,20 @@ HDLCoder/opt4_HDL/codegen/peakPicker/hdlsrc/vivado_*/
 HDLCoder/opt4_HLS/codegen/peakPicker/hdlsrc/html/
 HDLCoder/opt4_HLS/codegen/peakPicker/hdlsrc/interface/
 HDLCoder/opt4_HLS/codegen/peakPicker/hdlsrc/vitis_prj/
-HLS/origin/.github/
+# HLS/origin/.github/
 HLS/origin/proj_peakPicker/
-HLS/origin/prompt.md
+# HLS/origin/prompt.md
 HLS/origin/vitis_hls.log
-HLS/perf_opt1/.github/
+# HLS/perf_opt1/.github/
 HLS/perf_opt1/proj_peakPicker/
-HLS/perf_opt2/.github/
+# HLS/perf_opt2/.github/
 HLS/perf_opt2/proj_peakPicker/
-HLS/perf_opt3/.github/
+# HLS/perf_opt3/.github/
 HLS/perf_opt3/proj_peakPicker/
 HLS/analyzeReports.py
 MATLAB/origin/peakPicker_tb_vi.m
 # MATLAB/origin/visualize.md
-prompts/
+# prompts/
 # scripts/llmOut.md
 # scripts/recGen.md
 # scripts/generate_hls_code.py
