@@ -7,7 +7,7 @@
 #include <cassert>
 
 // Define constants
-#define MAX_WINDOW_LENGTH 32
+#define MAX_WINDOW_LENGTH 11
 #define MAX_PEAKS 100
 #define MAX_SIGNAL_LENGTH 8192
 

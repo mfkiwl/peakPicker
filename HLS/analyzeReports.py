@@ -374,8 +374,8 @@ def write_report_summary(all_resources, all_timing, all_latency, output_file="fp
 
 def main():
     # Set the base directories
-    hls_base_dir = "/home/jielei/Projects/UTS/peakPicker/HLS"
-    hdlcoder_base_dir = "/home/jielei/Projects/UTS/peakPicker/HDLCoder"
+    hls_base_dir = "/home/amd/UTS/peakPicker/HLS"
+    hdlcoder_base_dir = "/home/amd/UTS/peakPicker/HDLCoder"
     print(f"Analyzing reports in: {hls_base_dir} and {hdlcoder_base_dir}")
     
     # Find all reports
